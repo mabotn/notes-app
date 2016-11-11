@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Notes App</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header clearfix">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+					<li role="presentation"><a href="/login">Login</a></li>
+					<li role="presentation" class="active"><a href="/register">Register</a></li>
+				</ul>
+			</nav>
+			<h3 class="text-muted">Notes App</h3>
+		</div>
+
+		<form class="row" method="post">
+			<div class="col-md-12">
+				<div class="input-group col-sm-12">
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" class="form-control">
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<br>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="input-group col-sm-12">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" class="form-control">
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<br>
+				<div class="alert alert-danger col-sm-12" id="error" hidden>
+					Username already used
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<button class="btn btn-default">Register</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+		$(document).ready(() => {
+			if (document.location.search.indexOf('error') > -1) {
+				$('#error').show()
+			}
+		})
+	</script>
+</body>
+
+</html>
